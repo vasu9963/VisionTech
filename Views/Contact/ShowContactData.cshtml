@@ -1,0 +1,36 @@
+﻿
+
+
+
+@model IEnumerable<TestTemplate.Models.Contacttable>
+@{
+    ViewBag.Title = "ShowContactData";
+    Layout = "~/Views/Shared/Admin_layout.cshtml";
+}
+
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+
+
+
+<center>
+    <table class="table offset-2" style="width:70%;height:60%;border:1px solid black;margin-top:100px;">
+        <tr>
+            <th style="border:1px solid black;text-align:center;">Subject</th>
+            <th style="border:1px solid black;text-align:center;">Name</th>
+            <th style="border:1px solid black;text-align:center;">Email</th>
+            <th style="border:1px solid black;text-align:center;">Message</th>
+
+        </tr>
+        @foreach (var v in Model)
+        {
+            <tr>
+                <td style="border:1px solid black;text-align:center;">@v.Subject</td>
+                <td style="border:1px solid black;text-align:center;">@v.Name</td>
+                <td style="border:1px solid black;text-align:center;">@v.Email</td>
+                <td style="border:1px solid black;text-align:center;">@v.Message</td>
+            </tr>
+        }
+    </table>
+</center>

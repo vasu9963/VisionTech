@@ -1,0 +1,27 @@
+﻿
+
+
+@model TestTemplate.Models.Recipevideotable
+@{
+    ViewBag.Title = "EditVideoLink";
+    Layout = "~/Views/Shared/Admin_layout.cshtml";
+}
+
+<div class="offset-3" style="margin-top:100px" ;>
+    <form method="post" action="/VideoLink/EditVideoLink" enctype="multipart/form-data">
+        <input type="hidden" value="@Model.RecipevideoID" name="RecipevideoID" class="form-control" />
+        <label>Heading</label>
+        <input type="text" value="@Model.Heading" name="Heading" class="form-control" />
+
+        <label>Image</label>
+        <input type="file"  name="Image" class="form-control" />
+
+        <label>Video Link</label>
+        <input type="url" value="@Model.VideoLink" name="VideoLink" class="form-control" />
+
+        <button type="submit" class="btn btn-success">Update Category</button>
+    </form>
+</div>
+
+
+

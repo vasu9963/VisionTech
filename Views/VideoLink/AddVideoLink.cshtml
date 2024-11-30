@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "AddVideoLink";
+    Layout = "~/Views/Shared/Admin_layout.cshtml";
+}
+
+<div class="offset-3" style="margin-top:100px" ;>
+    <form method="post" action="/VideoLink/AddVideoLink">
+        <label>Heading</label>
+        <input type="text" name="Heading" class="form-control" />
+
+        <label>Image</label>
+        <input type="file" name="Image" class="form-control" />
+
+        <label>Video Link</label>
+        <input type="url" name="VideoLink" class="form-control" />
+
+        <button type="submit" class="btn btn-success">Add Video</button>
+    </form>
+</div>

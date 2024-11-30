@@ -1,0 +1,41 @@
+﻿@model IEnumerable<TestTemplate.Models.Categorytable>
+@{
+    ViewBag.Title = "GetCategoryRecords";
+    Layout = "~/Views/Shared/Admin_layout.cshtml";
+}
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<div class="offset-3" style="margin-top:100px;">
+    <a href="/Category/AddCategory"> <span type="submit" class="btn btn-info">Add Category</span></a>
+</div>
+
+
+<center>
+    <table class="table offset-2" style="width:70%;height:60%;border:1px solid black;margin-top:50px;">
+        <tr>
+            <th style="border:1px solid black;text-align:center;">Title</th>
+            <th style="border:1px solid black;text-align:center;">Description</th>
+            <th style="border:1px solid black;text-align:center;">Image</th>
+
+            <th style="border:1px solid black;text-align:center;">Actions</th>
+
+        </tr>
+        @foreach (var v in Model)
+        {
+            <tr>
+                <td style="border:1px solid black;text-align:center;">@v.Title</td>
+                <td style="border:1px solid black;text-align:center;">@v.Description</td>
+                <td style="border:1px solid black;text-align:center;"><img style="width:90px;" src="@Url.Content("~/ImagesFolder/" + v.Image)" /></td>
+
+                <td style="border:1px solid black;text-align:center;">
+                    <a href="/Category/EditCategory?ID=@v.CategoryID"><span typeof="submit" class="btn btn-primary">Edit</span></a>
+                    <a href="/Category/DeleteCategory?ID=@v.CategoryID"><span typeof="submit" class="btn btn-danger">Delete</span></a>
+                </td>
+
+
+            </tr>
+
+        }
+    </table>
+</center>
